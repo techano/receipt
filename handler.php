@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('America/Phoenix');
 
 require __DIR__ . '/vendor/autoload.php';
 
@@ -10,7 +11,7 @@ function printReceipt($name, $text)
 {
     try {
         // Validate input length after trimming
-        if (strlen($name) > 42 || strlen($text) > 400) {
+        if (strlen($name) > 42 || strlen($text) > 500) {
             throw new InvalidArgumentException('Input exceeds character limit. Stop trying to hack me :(');
         }
 

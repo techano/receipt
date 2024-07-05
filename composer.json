@@ -1,0 +1,6 @@
+{
+    "name": "kevin/printer",
+    "require": {
+        "mike42/escpos-php": "^4.0"
+    }
+}

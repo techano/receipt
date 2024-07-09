@@ -72,7 +72,6 @@ function printReceipt($name, $text)
 function logError($name, $message, $errorMessage)
 {
     $timestamp = date('Y-m-d H:i:s');
-    $ipAddress = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : 'UNKNOWN';
     $logMessage = "[$timestamp] Error: $errorMessage\n";
     
     // Log the error to a file

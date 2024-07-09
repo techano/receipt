@@ -15,6 +15,8 @@ function printReceipt($name, $text)
             throw new InvalidArgumentException('Input exceeds character limit. Stop trying to hack me :(');
         }
 
+        $wrappedText = wordwrap($text, 36, "\n", true);
+
         $connector = new FilePrintConnector("/dev/usb/lp0");
         $printer = new Printer($connector);
         $timestamp = date('Y-m-d H:i:s');
@@ -28,7 +30,7 @@ function printReceipt($name, $text)
 
         // Print the user input
         $printer->text("Message: ");
-        $printer->text($text);
+        $printer->text($wrappedText);
         $printer->text("\n\n");
 
         // Print the time
